@@ -1,0 +1,138 @@
+/*
+  法律文件的共用樣式。
+
+  刻意不引用任何外部資源（字型、CDN）—— 審查員可能在網路受限的環境開啟，
+  而一個載不出樣式的隱私政策比樸素的更糟。全部用系統字型。
+*/
+
+:root {
+  --ink: #1a2126;
+  --sub: #5b6b76;
+  --line: #e6ecef;
+  --accent: #1e6fbf;
+  --bg: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e8eef2;
+    --sub: #9fb0bb;
+    --line: #2a3439;
+    --accent: #6cb0f5;
+    --bg: #141a1e;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 2rem 1.25rem 4rem;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
+    "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  -webkit-text-size-adjust: 100%;
+}
+
+main {
+  max-width: 46rem;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.6rem;
+  line-height: 1.4;
+  margin: 0 0 0.25rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+  margin: 2.5rem 0 0.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+h3 {
+  font-size: 1rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+p,
+li {
+  color: var(--ink);
+}
+
+.meta {
+  color: var(--sub);
+  font-size: 0.9rem;
+  margin: 0 0 2rem;
+}
+
+a {
+  color: var(--accent);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+}
+
+th,
+td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.6rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+
+th {
+  color: var(--sub);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* 表格在窄螢幕上要能自己橫向捲，不要把整頁撐寬。 */
+.scroll {
+  overflow-x: auto;
+}
+
+.note {
+  border-left: 3px solid var(--accent);
+  padding: 0.5rem 0 0.5rem 1rem;
+  margin: 1.5rem 0;
+  color: var(--sub);
+}
+
+/* 待填的空格。發布前務必全部換掉 —— 用顏色標出來，漏了一眼就看得到。 */
+.fill {
+  background: #fff2b2;
+  color: #6b4e00;
+  padding: 0 0.2em;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+nav {
+  margin: 2rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.95rem;
+}
+
+nav a {
+  margin-right: 1.25rem;
+  display: inline-block;
+}
+
+footer {
+  margin-top: 3rem;
+  color: var(--sub);
+  font-size: 0.85rem;
+}
